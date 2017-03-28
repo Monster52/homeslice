@@ -22,11 +22,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'pg'
 gem 'devise'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug', platform: :mri
   gem 'pry'
 end
@@ -39,7 +38,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
