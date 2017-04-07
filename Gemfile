@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'pg'
 gem 'devise'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'byebug', platform: :mri
