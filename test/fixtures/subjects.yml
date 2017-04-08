@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+history:
+  title: History
+  work: All of the book 
+  curriculum_id: curriculums(:curriculum_one)
+
+math:
+  title: Math
+  work: Fred
+  curriculum_id: curriculums(:curriculum_one)

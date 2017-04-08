@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408022238) do
+ActiveRecord::Schema.define(version: 20170408031901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20170408022238) do
     t.index ["user_id"], name: "index_curriculums_on_user_id", using: :btree
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subject"
+    t.string   "work"
+    t.datetime "date"
+    t.integer  "curriculum_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["curriculum_id"], name: "index_schedules_on_curriculum_id", using: :btree
+  end
+
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
@@ -33,6 +44,15 @@ ActiveRecord::Schema.define(version: 20170408022238) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_students_on_user_id", using: :btree
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "title"
+    t.string   "work"
+    t.integer  "curriculum_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["curriculum_id"], name: "index_subjects_on_curriculum_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,5 +74,7 @@ ActiveRecord::Schema.define(version: 20170408022238) do
 
   add_foreign_key "curriculums", "students"
   add_foreign_key "curriculums", "users"
+  add_foreign_key "schedules", "curriculums"
   add_foreign_key "students", "users"
+  add_foreign_key "subjects", "curriculums"
 end
