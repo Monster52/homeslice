@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-if User.where(email: "ross@example.com").nil?
+unless User.find_by(email: "ross@example.com")
   admin = User.create!(email: 'ross@example.com', password: 'welcome')
   puts "Created admin: email - #{User.first.email}"
 else
