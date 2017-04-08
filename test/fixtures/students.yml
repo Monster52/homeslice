@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+bella:
+  name: Bella Waguespack
+  age: 7
+  grade: 2
+  user_id: users(:cindy).id
+
+molly:
+  name: Molly Waguespack
+  age: 4
+  grade: Kinder
+  user_id: users(:cindy).id
