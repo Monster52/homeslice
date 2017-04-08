@@ -6,5 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin = User.create!(email: 'ross@example.com', password: 'welcome')
-puts "Created admin: email - #{User.first.email} / password - #{User.first.password}"
+if User.where(email: "ross@example.com").nil?
+  admin = User.create!(email: 'ross@example.com', password: 'welcome')
+  puts "Created admin: email - #{User.first.email}"
+else
+  puts "User admin already created"
+end
+
