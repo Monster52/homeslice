@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 5.0.2'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -23,9 +23,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pg'
-gem 'devise', git: 'https://github.com/jcoyne/devise.git', branch: 'rails-5.1'
+gem 'devise', github: 'plataformatec/devise'
 gem "responders", git: 'https://github.com/plataformatec/responders.git', branch: 'master'
 gem 'bootstrap-sass'
+gem 'webpacker', github: 'rails/webpacker'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
