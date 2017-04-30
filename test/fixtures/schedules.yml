@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+schedule_one:
+  title: Week One
+  subject: History
+  work: Pages 1-3
+  date: 2017-04-07 21:51:46
+  curriculum: curriculums(:curriculum_one)
+

@@ -7,4 +7,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def sing_in_user(user)
+    post new_user_session_path(email: user.email, password: user.password)
+  end
 end

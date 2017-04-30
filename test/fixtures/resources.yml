@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+book_one:
+  title: World History
+  type: book
+  area: chapter 1
+  subject_id: subjects(:history).id
+
+math:
+  title: Math
+  type: website
+  area: Basic Adding
+  subject: subjects(:math).id
