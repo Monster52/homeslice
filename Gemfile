@@ -23,8 +23,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pg'
-gem 'devise'
+gem 'devise', github: 'plataformatec/devise'
+gem "responders", git: 'https://github.com/plataformatec/responders.git', branch: 'master'
 gem 'bootstrap-sass'
+gem 'webpacker', github: 'rails/webpacker'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
