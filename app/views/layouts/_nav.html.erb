@@ -8,16 +8,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Homeslice</a>
+      <a><%= link_to "Homeslice", root_path, class: 'navbar-brand' %></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
         <% if user_signed_in? %>
           <li><%= link_to current_user.email, edit_user_registration_path, class: 'navbar-link' %></li>
            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+        <% else %>
+          <li><%= link_to "Login", new_user_session_path, class: 'navbar-link' %></li>
+          <li><%= link_to "Signup", new_user_registration_path, class: 'navbar-link' %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
