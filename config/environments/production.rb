@@ -83,4 +83,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Setup webpack-dev-server to false for production
+  config.webpack.dev_server.enabled = false
 end
